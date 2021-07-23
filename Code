@@ -1,0 +1,68 @@
+#include <Servo.h>
+const int buzzer = 9; //buzzer to arduino pin 9
+Servo servo;
+int pos = 5;
+const int led = 13;
+void setup(){
+ 
+ pinMode(buzzer, OUTPUT); // Set buzzer - pin 9 as an output
+ pinMode(led, OUTPUT);
+ servo.attach(2);
+ Serial.begin(9600);
+ 
+}
+
+
+
+void loop(){
+  delay(10000);
+    for (pos = 50; pos >= 0; pos -= 1) { 
+    servo.write(pos);              
+    delay(15);                       
+  }
+  delay(500);
+  digitalWrite(13, HIGH);
+   tone(buzzer, 900); 
+  delay(475);       
+  tone(buzzer,935);   
+  delay(475);       
+  tone (buzzer, 700);
+  delay(475);
+  tone(buzzer, 900); 
+  delay(475);       
+  tone(buzzer,935);    
+  delay(475);       
+  tone (buzzer, 700);
+  delay(475);
+   tone(buzzer, 900);
+  delay(475);       
+  tone(buzzer,935); 
+  delay(475);       
+  tone (buzzer, 700);
+  delay(475);
+  tone(buzzer, 900); 
+  delay(475);       
+  tone(buzzer,935);   
+  delay(475);       
+  tone (buzzer, 700);
+  delay(475);
+  noTone(buzzer);
+  delay(1000);
+  tone(buzzer,800);
+  delay(700);
+  tone(buzzer,850);
+  delay(700);
+  tone(buzzer,900);
+  delay(700);
+  tone(buzzer,975);
+  delay(1000);
+  noTone(buzzer);
+  delay(2000);
+  digitalWrite(13, LOW);
+ for (pos = 5; pos <= 805; pos += 1) { 
+    servo.write(pos);              
+    delay(15);                       
+  }
+  delay(10000);
+  
+}
